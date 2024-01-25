@@ -41,11 +41,9 @@ def print_student_name_and_id(about_me):
 def add_pizza_toppings(about_me, toppings):
     for topping in toppings:
         about_me["pizza_topping"].append(topping)
-    new_list = []
-    for topping in about_me["pizza_topping"]:
-        topping.lower()
-        new_list.append(topping)
-    about_me["pizza_topping"] = new_list
+    
+    about_me["pizza_topping"] = [topping.lower() for topping in about_me["pizza_topping"]]
+    
        
     about_me["pizza_topping"].sort()
     return
